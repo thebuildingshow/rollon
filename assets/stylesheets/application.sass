@@ -1,33 +1,4 @@
 @import 'compass/css3'
 @import 'compass/reset/utilities'
 @import 'base'
-
-.home
-  &__backdrop
-    position: relative
-    width: 100%
-    padding-bottom: 140% // 6:8.5 ratio
-    background-size: contain
-    background-repeat: no-repeat
-
-    &__contents
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      padding: $lh
-
-      > a
-        color: white
-
-.channel
-  &__contents
-    //
-
-.block
-  &--channel,
-  &--image,
-  &--text,
-  &--generic
-    display: block
+@import 'modules'

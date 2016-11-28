@@ -1,4 +1,12 @@
 <div class='channel'>
+  <a class='channel__return' href='/'>
+    ←
+  </a>
+
+  <h1 class='channel__title'>
+    <span><%= @channel.title %></span>
+  </h1>
+
   <div class='channel__contents'>
     <% @channel.contents.reverse.each do |connectable| %>
       <% if connectable.is_channel? %>

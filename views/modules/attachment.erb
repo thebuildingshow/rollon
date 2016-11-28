@@ -1,0 +1,11 @@
+<div class='block block--attachment'>
+  <a href='<%= attachment.attachment.url %>'>
+    <% if !attachment.image.nil? %>
+      <img src='<%= attachment.image.thumb.url %>'>
+    <% elsif !attachment.title.nil? %>
+      Download <%= attachment.title %>
+    <% else %>
+      Download
+    <% end %>
+  </a>
+</div>

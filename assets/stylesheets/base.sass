@@ -1,6 +1,10 @@
+// Units
 $fs: 30px
 $lh: 40px
 $breakpoint: 640px
+
+// Colors
+$teal: #2b9ebd
 
 +global-reset()
 
@@ -26,6 +30,25 @@ body
   letter-spacing: 1px
   -webkit-font-smoothing: antialiased
 
+  @media (max-width: $breakpoint)
+    font-size: $fs / 2
+    line-height: $lh / 2
+
 a
   color: black
   text-decoration: none
+
+  &:hover
+    color: $teal
+
+p
+  margin: $lh 0
+
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+img
+  display: inline-block
+  vertical-align: bottom

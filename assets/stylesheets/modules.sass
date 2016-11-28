@@ -1,0 +1,84 @@
++keyframes(fade-out)
+  100%
+    opacity: 0
+
+.scroll
+  position: fixed
+  top: 50%
+  left: 50%
+  font-size: 300%
+  text-align: center
+  +transform(translate(-50%, -50%))
+  z-index: 1
+  color: white
+  text-shadow: 0 0 5px black
+  pointer-events: none
+  +animation(fade-out 1s forwards)
+  +animation-delay(2s)
+
+
+.home
+  &__backdrop
+    position: relative
+    width: 100%
+    padding-bottom: 140% // 6:8.5 ratio
+    background-color: $teal
+    background-size: contain
+    background-repeat: no-repeat
+
+    &__contents
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      padding: $lh
+
+      > a
+        display: block
+        position: absolute
+        top: 50%
+        +transform(translateY(-50%))
+        font-size: 150%
+        padding: $lh 0
+        color: white
+        text-shadow: 0 0 5px black
+
+.channel
+  margin: $lh
+
+  &__return
+    display: block
+    margin-bottom: $lh
+
+  &__title
+    margin-bottom: $lh
+    font-weight: normal
+    font-size: 100%
+
+    > span
+      border-bottom: 2px solid black
+
+  &__contents
+    //
+
+.block
+  display: block
+  margin: $lh 0
+
+  &:first-child
+    margin-top: 0
+
+  &:last-child
+    margin-bottom: 0
+
+  &--channel,
+  &--image,
+  &--text,
+  &--attachment,
+  &--generic
+    //
+
+  &--attachment
+    > a > img
+      border: 2px solid
