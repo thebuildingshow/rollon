@@ -1,0 +1,11 @@
+<div class='channel'>
+  <div class='channel__contents'>
+    <% @channel.contents.reverse.each do |connectable| %>
+      <% if connectable.is_channel? %>
+        <%= channel(connectable) %>
+      <% else %>
+        <%= block(connectable) %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

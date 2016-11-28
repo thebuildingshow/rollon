@@ -1,0 +1,9 @@
+<div class='home'>
+  <% @channel.channels.zip(@channel.blocks).reverse.each do |(channel, block)| %>
+    <div class='home__backdrop' style='background-image: url("<%= block.image.original.url %>")'>
+      <div class='home__backdrop__contents'>
+        <%= channel(channel) %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,31 @@
+$fs: 30px
+$lh: 40px
+$breakpoint: 640px
+
++global-reset()
+
+html
+  +box-sizing(border-box)
+
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+body
+  padding: 0
+
+  background-color: white
+  color: black
+
+  font-size: $fs
+  font-family: 'Arial Narrow', 'Arial', sans-serif
+  line-height: $lh
+  text-rendering: optimizeLegibility
+  text-transform: uppercase
+  letter-spacing: 1px
+  -webkit-font-smoothing: antialiased
+
+a
+  color: black
+  text-decoration: none
