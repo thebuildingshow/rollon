@@ -5,7 +5,7 @@
   </h1>
 
   <div class='home__contents'>
-    <% @channel.channels.each do |channel| %>
+    <% @channel.channels.reverse.each do |channel| %>
       <%= channel(channel) %>
     <% end %>
   </div>

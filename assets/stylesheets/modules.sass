@@ -66,36 +66,6 @@
     top: 0%
     left: 90%
 
-  // &--1
-  //   top: 25% !important
-  //   left: 75% !important
-  //   +transform(translate(-50%, -50%) scale(0.15) !important)
-
-  // &--2
-  //   top: 33.33% !important
-  //   left: 25% !important
-  //   +transform(translate(-50%, -50%) scale(0.25) !important)
-
-  // &--3
-  //   top: 66.66% !important
-  //   left: 50% !important
-  //   +transform(translate(-50%, -50%) scale(0.5) !important)
-
-  // &--4
-  //   top: 50% !important
-  //   left: 0% !important
-  //   +transform(translate(-50%, -50%) scale(0.33) !important)
-
-  // &--5
-  //   top: 0% !important
-  //   left: 75% !important
-  //   +transform(translate(-50%, -50%) scale(0.75) !important)
-
-  // &--6
-  //   top: 100% !important
-  //   left: 50% !important
-  //   +transform(translate(-50%, -50%) scale(0.9) !important)
-
 .home
   margin: $lh
 
@@ -107,12 +77,8 @@
       display: block
       padding: ($lh / 3) 0
       margin: 0
-      color: white
       font-weight: normal
       +hyphenate()
-
-      &:hover
-        color: black
 
       @media (max-width: $breakpoint)
         padding: ($lh / 6) 0
@@ -129,8 +95,7 @@
 
   &__contents
     width: 80%
-    padding: ($lh / 4)
-    // background-color: white
+    margin: 0 $lh
 
     &__title
       text-align: center
