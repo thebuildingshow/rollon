@@ -1,13 +1,14 @@
-<div class='scroll'>
-  ↓
+<div class='home'>
+  <h1>
+    Roll On Roll On<br>
+    Phenomena
+  </h1>
+
+  <div class='home__contents'>
+    <% @channel.channels.each do |channel| %>
+      <%= channel(channel) %>
+    <% end %>
+  </div>
 </div>
 
-<div class='home'>
-  <% @channel.channels.zip(@channel.blocks).reverse.each do |(channel, block)| %>
-    <div class='home__backdrop' style='background-image: url("<%= block.image.original.url %>")'>
-      <div class='home__backdrop__contents'>
-        <%= channel(channel) %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= erb :poster, locals: { mode: :home } %>

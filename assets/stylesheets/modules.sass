@@ -1,53 +1,121 @@
-+keyframes(fade-out)
-  100%
-    opacity: 0
+.poster
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  z-index: -1
 
-.scroll
-  position: fixed
-  top: 50%
-  left: 50%
-  font-size: 300%
-  text-align: center
-  +transform(translate(-50%, -50%))
-  z-index: 1
-  color: white
-  text-shadow: 0 0 5px black
-  pointer-events: none
-  +animation(fade-out 1s forwards)
-  +animation-delay(2s)
+  &__element
+    display: block
+    position: absolute
+    width: 100vw
+    top: 50%
+    left: 50%
+    +transform(translate(-50%, -50%))
+
+  &--scale-1
+    +transform(translate(-50%, -50%) scale(0.1) !important)
+  &--scale-2
+    +transform(translate(-50%, -50%) scale(0.15) !important)
+  &--scale-3
+    +transform(translate(-50%, -50%) scale(0.2) !important)
+  &--scale-4
+    +transform(translate(-50%, -50%) scale(0.25) !important)
+  &--scale-5
+    +transform(translate(-50%, -50%) scale(0.3) !important)
+  &--scale-6
+    +transform(translate(-50%, -50%) scale(0.33) !important)
+  &--scale-7
+    +transform(translate(-50%, -50%) scale(0.4) !important)
+  &--scale-8
+    +transform(translate(-50%, -50%) scale(0.5) !important)
+  &--scale-9
+    +transform(translate(-50%, -50%) scale(0.6) !important)
+  &--scale-10
+    +transform(translate(-50%, -50%) scale(0.75) !important)
+
+  &--position-1
+    top: 10%
+    left: 80%
+  &--position-2
+    top: 20%
+    left: 20%
+  &--position-3
+    top: 30%
+    left: 60%
+  &--position-4
+    top: 40%
+    left: 30%
+  &--position-5
+    top: 50%
+    left: 40%
+  &--position-6
+    top: 60%
+    left: 50%
+  &--position-7
+    top: 70%
+    left: 20%
+  &--position-8
+    top: 80%
+    left: 70%
+  &--position-9
+    top: 90%
+    left: 0%
+  &--position-10
+    top: 0%
+    left: 90%
+
+  // &--1
+  //   top: 25% !important
+  //   left: 75% !important
+  //   +transform(translate(-50%, -50%) scale(0.15) !important)
+
+  // &--2
+  //   top: 33.33% !important
+  //   left: 25% !important
+  //   +transform(translate(-50%, -50%) scale(0.25) !important)
+
+  // &--3
+  //   top: 66.66% !important
+  //   left: 50% !important
+  //   +transform(translate(-50%, -50%) scale(0.5) !important)
+
+  // &--4
+  //   top: 50% !important
+  //   left: 0% !important
+  //   +transform(translate(-50%, -50%) scale(0.33) !important)
+
+  // &--5
+  //   top: 0% !important
+  //   left: 75% !important
+  //   +transform(translate(-50%, -50%) scale(0.75) !important)
+
+  // &--6
+  //   top: 100% !important
+  //   left: 50% !important
+  //   +transform(translate(-50%, -50%) scale(0.9) !important)
 
 .home
-  &__backdrop
-    position: relative
-    width: 100%
-    padding-bottom: 140% // 6:8.5 ratio
-    background-color: $teal
-    background-size: cover
-    background-repeat: no-repeat
+  margin: $lh
 
-    &__contents
-      position: absolute
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      padding: $lh
-      overflow: hidden
+  @media (max-width: $breakpoint)
+    margin: ($lh / 2)
 
-      > a
-        display: block
-        position: absolute
-        top: 50%
-        +transform(translateY(-50%))
-        font-size: 150%
-        padding: $lh 0
-        color: white
-        text-shadow: 2px 2px 5px black
-        hyphens: auto
-        word-wrap: break-word
-        word-break: break-word
-        -ms-word-break: break-all
-        overflow-wrap: break-word
+  &__contents
+    > a
+      display: block
+      padding: ($lh / 3) 0
+      margin: 0
+      color: white
+      font-weight: normal
+      +hyphenate()
+
+      &:hover
+        color: black
+
+      @media (max-width: $breakpoint)
+        padding: ($lh / 6) 0
 
 .channel
   margin: $lh
@@ -59,26 +127,24 @@
     display: block
     margin-bottom: $lh
 
-  &__title
-    margin-bottom: $lh
-    font-weight: normal
-    font-size: 100%
-
-    > span
-      border-bottom: 2px solid black
-
   &__contents
-    //
+    width: 80%
+    padding: ($lh / 4)
+    // background-color: white
+
+    &__title
+      text-align: center
+
+    @media (max-width: $breakpoint)
+      width: 100%
+      padding: $lh / 2
 
 .block
   display: block
-  margin: $lh 0
+  +block-margins($lh)
 
-  &:first-child
-    margin-top: 0
-
-  &:last-child
-    margin-bottom: 0
+  @media (max-width: $breakpoint)
+    +block-margins($lh / 2)
 
   &--channel,
   &--image,
@@ -90,3 +156,43 @@
   &--attachment
     > a > img
       border: 2px solid
+
+  &--channel
+    display: block
+    margin: 0
+    padding: ($lh / 2) 0
+
+    @media (max-width: $breakpoint)
+      padding: ($lh / 4) 0
+
+
+  &--text
+    font-family: 'Helvetica Neue', sans-serif
+    font-size: 18px
+    line-height: 1.5
+    text-transform: none
+    letter-spacing: 0
+
+    > h1,
+    > h2,
+    > h3
+      font-family: $arialNarrow
+      text-transform: uppercase
+      font-weight: bold
+      text-align: center
+      font-size: 22px
+
+      @media (max-width: $breakpoint)
+        font-size: 16px
+
+    > p
+      +block-margins($lh / 2)
+
+    @media (max-width: $breakpoint)
+      font-size: 14px
+
+      > p
+        +block-margins($lh / 3)
+
+  &--image
+    text-align: center

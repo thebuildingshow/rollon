@@ -1,0 +1,12 @@
+<div class='poster'>
+  <% (1..10).to_a.shuffle.take(3).each do |i| %>
+    <img
+      class='
+        poster__element
+        <%= "poster--position-#{rand(1..(mode === :page ? 3 : 10))}" %>
+        <%= "poster--scale-#{rand(1..(mode === :page ? 3 : 10))}" %>
+      '
+      src='<%= image_path("#{i}.png") %>'
+    >
+  <% end %>
+</div>

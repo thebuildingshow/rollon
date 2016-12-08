@@ -1,0 +1,22 @@
+@import 'compass/css3'
+@import 'compass/reset/utilities'
+
+$fs: 30px
+$lh: 40px
+$breakpoint: 640px
+$teal: #2b9ebd
+$arialNarrow: 'Arial Narrow MT Pro', 'Arial Narrow', 'Arial', sans-serif
+
+=block-margins($size)
+  margin: $size 0
+  &:first-child
+    margin-top: 0
+  &:last-child
+    margin-bottom: 0
+
+=hyphenate()
+  hyphens: auto
+  word-wrap: break-word
+  word-break: break-word
+  -ms-word-break: break-all
+  overflow-wrap: break-word

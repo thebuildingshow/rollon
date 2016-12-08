@@ -1,19 +1,35 @@
 <div class='channel'>
-  <a class='channel__return' href='/'>
-    ←
-  </a>
-
-  <h1 class='channel__title'>
-    <span><%= @channel.title %></span>
-  </h1>
+  <h2>
+    <a class='channel__return' href='/'>
+      Roll On Roll On<br>
+      Phenomena
+    </a>
+  </h2>
 
   <div class='channel__contents'>
-    <% @channel.contents.reverse.each do |connectable| %>
-      <% if connectable.is_channel? %>
-        <%= channel(connectable) %>
-      <% else %>
-        <%= block(connectable) %>
+    <h1 class='channel__contents__title'>
+      <span><%= @channel.title %></span>
+    </h1>
+
+    <div class='channel__contents__body'>
+      <% if @channel.contents.size === 0 %>
+        <div class='block block--text utility--centered'>
+          <p>
+            Nothing Yet.
+            <a href='/'>Back</a>
+          </p>
+        </div>
       <% end %>
-    <% end %>
+
+      <% @channel.contents.reverse.each do |connectable| %>
+        <% if connectable.is_channel? %>
+          <%= channel(connectable) %>
+        <% else %>
+          <%= block(connectable) %>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+
+<%= erb :poster, locals: { mode: :page } %>
