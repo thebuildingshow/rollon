@@ -22,7 +22,7 @@ body
   background-position: top center
   background-repeat: repeat-y
   background-size: 90%
-  text-shadow: 0 0 10px lighten($teal, 50%), 0 0 10px lighten($teal, 50%), 0 0 2px lighten($teal, 50%), 0 0 2px lighten($teal, 50%)
+  text-shadow: 0 0 ($lh / 2) $lightTeal, 0 0 ($lh / 4) $lightTeal, 0 0 2px $lightTeal
 
   @media (max-width: $breakpoint)
     font-size: $fs / 2
@@ -30,10 +30,10 @@ body
 
 .body
   &--index
-    background-color: lighten($teal, 50%)
+    background-color: $lightTeal
 
   &--page
-    background-color: lighten($teal, 50%)
+    background-color: $lightTeal
 
 a
   color: black
