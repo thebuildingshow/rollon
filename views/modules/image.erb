@@ -1,3 +1,9 @@
 <div class='block block--image'>
   <img src='<%= image.image.large.url %>'>
+
+  <div class='block__description'>
+    <% if image.description %>
+      <%= image.description_html %>
+    <% end %>
+  </div>
 </div>
