@@ -23,15 +23,25 @@ class Application < Sinatra::Base
         erb :'modules/generic', locals: { block: connectable }
       end
     end
+
+    def get(channel_id)
+      channel = Arena.channel(channel_id)
+
+      unless (channel.user_id == ENV['ARENA_OWNER_ID'].to_i) && channel.published
+        halt 403, 'Forbidden'
+      end
+
+      channel
+    end
   end
 
   get '/' do
-    @channel = Arena.channel ENV['ARENA_ROOT_CHANNEL_ID']
+    @channel = get(ENV['ARENA_ROOT_CHANNEL_ID'])
     erb :home, layout: :layout
   end
 
   get '/:channel_id' do
-    @channel = Arena.channel(params[:channel_id]) # Needs encoding with secret
+    @channel = get(params[:channel_id])
     erb :index, layout: :layout
   end
 end
