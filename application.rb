@@ -17,6 +17,8 @@ class Application < Sinatra::Base
         erb :'modules/image', locals: { image: connectable }
       when 'Text'
         erb :'modules/text', locals: { text: connectable }
+      when 'Media'
+        erb :'modules/media', locals: { media: connectable }
       when 'Attachment'
         erb :'modules/attachment', locals: { attachment: connectable }
       else
