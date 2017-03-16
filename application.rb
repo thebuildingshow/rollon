@@ -21,6 +21,8 @@ class Application < Sinatra::Base
         erb :'modules/media', locals: { media: connectable }
       when 'Attachment'
         erb :'modules/attachment', locals: { attachment: connectable }
+      when 'Link'
+        erb :'modules/link', locals: { link: connectable }
       else
         erb :'modules/generic', locals: { block: connectable }
       end
@@ -39,7 +41,7 @@ class Application < Sinatra::Base
 
   get '/' do
     @channel = get(ENV['ARENA_ROOT_CHANNEL_ID'])
-    erb :home, layout: :layout
+    erb :index, layout: :layout
   end
 
   get '/:channel_id' do
